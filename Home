@@ -120,7 +120,7 @@
             }
             
             .banner-background {
-                height: 40%;
+                display: none; /* Hide banner on mobile */
             }
             
             .hero-section {
@@ -144,7 +144,7 @@
             }
             
             .banner-background {
-                height: 35%;
+                display: none; /* Hide banner on mobile */
             }
             
             .hero-section {
