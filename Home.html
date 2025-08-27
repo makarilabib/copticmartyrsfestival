@@ -53,6 +53,10 @@
             z-index: 5;
         }
         
+        .mobile-banner {
+            display: none; /* Hidden by default */
+        }
+        
         .hero-content {
             position: relative;
             z-index: 25;
@@ -120,7 +124,23 @@
             }
             
             .banner-background {
-                display: none; /* Hide banner on mobile */
+                display: none; /* Hide desktop banner on mobile */
+            }
+            
+            .mobile-banner {
+                display: block; /* Show mobile banner */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 45%; /* Same height as desktop banner */
+                background-image: url('https://i.postimg.cc/5tT2yZ4m/Wallpaper-description.png');
+                background-size: cover;
+                background-position: center 30%;
+                z-index: 5;
+                /* Create gradient transparency at the bottom */
+                mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
             }
             
             .hero-section {
@@ -143,8 +163,10 @@
                 font-size: 0.5rem;
             }
             
-            .banner-background {
-                display: none; /* Hide banner on mobile */
+            .mobile-banner {
+                height: 40%; /* Slightly smaller on very small devices */
+                mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             }
             
             .hero-section {
@@ -277,6 +299,7 @@
     <!-- Hero Section with Banner Background - FIXED -->
     <section class="relative hero-section text-white">
         <div class="banner-background"></div>
+        <div class="mobile-banner"></div>
         <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
         <div class="container mx-auto px-4 relative hero-content">
             <div class="hero-container">
@@ -450,4 +473,5 @@
         updateCountdown();
     </script>
 </body>
+</html>
 </html>
